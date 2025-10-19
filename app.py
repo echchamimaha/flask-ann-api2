@@ -6,5 +6,9 @@ app = Flask(__name__)
 def ping():
     return {'message': 'pong'}
 
+@app.route('/hello')
+def hello():
+    return {'message': 'Hello from Docker!', 'version': '2.0'}
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
